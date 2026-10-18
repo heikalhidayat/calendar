@@ -1,7 +1,6 @@
-
 let day;
 let month;
-let addDate = new Date().getDate()
+let addDate = new Date().getDate();
 let addDay = new Date().getDay();
 let addMonth = new Date().getMonth();
 let addYear = new Date().getFullYear();
@@ -67,12 +66,29 @@ switch (addMonth) {
     month = "December";
 }
 
-document.getElementById("demo").innerHTML = day + ", " + addDate + " " + month + " " + addYear;
-
-for (let i = 1; i <= 31; i++) {
-  console.log(i);
+function thisMonth() {
+  if (addMonth === 0 || addMonth === 2 || addMonth === 4 || addMonth === 6 || addMonth === 7 || addMonth === 9 || addMonth === 11) {
+    return 31;
+  } else if (addMonth === 3 || addMonth === 5 || addMonth === 8 || addMonth === 10) {
+    return 30;
+  } else {
+    if ((addYear % 400 === 0) || (addYear % 4 === 0 && addYear % 100 !== 0)) {
+      return 29;
+    } else {
+      return 28;
+    }
+  }
 }
 
 const dateDiv = document.createElement("div");
-dateDiv.textContent = i;
-document.getElementById("date").appendChild(dateDiv);
+function date() {
+  for (let i = 1; i <= thisMonth(); i++) {
+    console.log(i);
+    dateDiv.textContent += i + " ";
+    document.getElementById("date").appendChild(dateDiv);
+  }
+}
+
+document.getElementById("demo").innerHTML = day + ", " + addDate + " " + month + " " + addYear;
+
+date()
