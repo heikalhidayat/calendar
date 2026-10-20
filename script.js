@@ -81,14 +81,19 @@ function thisMonth() {
 }
 
 const dateDiv = document.createElement("div");
+const firstDay = new Date(addYear, addMonth, 1).getDay();
+
 function date() {
+  for (let i =1; i < firstDay; i++) {
+    const emptyDiv = document.createElement("div");
+    emptyDiv.textContent = " ";
+    document.getElementById("date").appendChild(emptyDiv);
+  }
   for (let i = 1; i <= thisMonth(); i++) {
-    console.log(i);
     dateDiv.textContent += i + " ";
     document.getElementById("date").appendChild(dateDiv);
   }
 }
 
 document.getElementById("demo").innerHTML = day + ", " + addDate + " " + month + " " + addYear;
-
 date()
