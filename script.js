@@ -81,7 +81,7 @@ function thisMonth() {
 }
 
 const firstDay = new Date(addYear, addMonth, 1).getDay();
-console.log(firstDay);
+
 function date() {
   for (let i = 1; i <= firstDay; i++) {
     const emptyDiv = document.createElement("div");
@@ -95,5 +95,6 @@ function date() {
   }
 }
 
+document.getElementById("thisMonth").innerHTML = month.toUpperCase();
 document.getElementById("demo").innerHTML = day + ", " + addDate + " " + month + " " + addYear;
 date()
