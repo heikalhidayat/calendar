@@ -80,17 +80,17 @@ function thisMonth() {
   }
 }
 
-const dateDiv = document.createElement("div");
 const firstDay = new Date(addYear, addMonth, 1).getDay();
-
+console.log(firstDay);
 function date() {
-  for (let i =1; i < firstDay; i++) {
+  for (let i = 1; i <= firstDay; i++) {
     const emptyDiv = document.createElement("div");
     emptyDiv.textContent = " ";
     document.getElementById("date").appendChild(emptyDiv);
   }
   for (let i = 1; i <= thisMonth(); i++) {
-    dateDiv.textContent += i + " ";
+    const dateDiv = document.createElement("div");
+    dateDiv.textContent = i;
     document.getElementById("date").appendChild(dateDiv);
   }
 }
