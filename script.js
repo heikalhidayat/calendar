@@ -94,7 +94,15 @@ function date() {
     document.getElementById("date").appendChild(dateDiv);
   }
 }
+let titleMonth;
+titleMonth = document.getElementById("thisMonth").innerHTML = month.toUpperCase();
 
-document.getElementById("thisMonth").innerHTML = month.toUpperCase();
 document.getElementById("demo").innerHTML = day + ", " + addDate + " " + month + " " + addYear;
-date()
+
+date();
+
+document.getElementById("prevMonth").addEventListener("click", function () {
+  window.alert("clicked")
+  addMonth - 1;
+  titleMonth = document.getElementById("thisMonth").innerHTML = month.toUpperCase();
+})
