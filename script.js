@@ -1,6 +1,8 @@
 const state = {
   date: new Date()
 }
+const notes = {};
+let selectedKey = null;
 
 function renderCalendar() {
   const year = state.date.getFullYear();
@@ -33,6 +35,7 @@ function renderCalendar() {
         month: "long",
         year: "numeric"
       });
+      notes[d, "-", (month + 1), "-", year]
     })
     dateContainer.appendChild(cell);
   }
