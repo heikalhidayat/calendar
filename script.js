@@ -25,7 +25,15 @@ function renderCalendar() {
 
   for (let d = 1; d <= daysInMonth; d++) {
     const cell = document.createElement("div");
+    const selec = document.getElementById("selected");
     cell.textContent = d;
+    cell.addEventListener("click", function () {
+      selec.textContent = new Date(year, month, d).toLocaleString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+    })
     dateContainer.appendChild(cell);
   }
 }
