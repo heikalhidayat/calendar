@@ -30,16 +30,21 @@ function renderCalendar() {
     const selec = document.getElementById("selected");
     cell.textContent = d;
     cell.addEventListener("click", function () {
-      selec.textContent = new Date(year, month, d).toLocaleString("id-ID", {
+      selectedKey = selec.textContent = new Date(year, month, d).toLocaleString("id-ID", {
         day: "numeric",
         month: "long",
         year: "numeric"
       });
-      notes[d, "-", (month + 1), "-", year]
     })
     dateContainer.appendChild(cell);
   }
 }
+
+const input = document.getElementById("noteInput").value
+const btnSave = document.getElementById("saveInput")
+btnSave.addEventListener("click", function() {
+  notes[selectedKey] = input;
+})
 
 function prevMonth() {
   state.date.setMonth(state.date.getMonth() - 1);
