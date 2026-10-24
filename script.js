@@ -34,7 +34,9 @@ function renderCalendar() {
         day: "numeric",
         month: "long",
         year: "numeric"
-      });     
+      });
+      const outputNotes = document.getElementById("noteInput");
+      outputNotes.value = notes[selectedKey] || " ";
     })
     dateContainer.appendChild(cell);
   }
