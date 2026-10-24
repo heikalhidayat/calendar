@@ -34,15 +34,15 @@ function renderCalendar() {
         day: "numeric",
         month: "long",
         year: "numeric"
-      });
+      });     
     })
     dateContainer.appendChild(cell);
   }
 }
 
-const input = document.getElementById("noteInput").value
 const btnSave = document.getElementById("saveInput")
 btnSave.addEventListener("click", function() {
+  let input = document.getElementById("noteInput").value
   notes[selectedKey] = input;
 })
 
