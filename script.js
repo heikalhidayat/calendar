@@ -43,17 +43,11 @@ function renderCalendar() {
 }
 
 const btnSave = document.getElementById("saveInput")
-btnSave.addEventListener("click", saveNote, function() {
+btnSave.addEventListener("click", function() {
   let input = document.getElementById("noteInput").value
   notes[selectedKey] = input;
 })
 
-function saveNote() {
-  if (!selectedKey) {
-    alert("Please select the date first")
-    return
-  }
-}
 function prevMonth() {
   state.date.setMonth(state.date.getMonth() - 1);
   renderCalendar();
