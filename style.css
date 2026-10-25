@@ -9,8 +9,22 @@
 #day {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    text-align: center;
 }
 #date {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+.date-cell {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.date-cell.selected {
+    background: #dfeadf;
+    border-color: #4a904a;
+    font-weight: bold;
 }
