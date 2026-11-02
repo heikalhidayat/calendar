@@ -2,6 +2,7 @@ const state = {
   date: new Date()
 }
 const notes = {};
+const saveNotes = JSON.parse(localStorage.getItem("notes")) || {};
 let selectedKey = null;
 
 function renderCalendar() {
