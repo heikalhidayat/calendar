@@ -16,15 +16,25 @@
     grid-template-columns: repeat(7, 1fr);
     text-align: center;
 }
-.date-cell {
+.day-cell {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
     cursor: pointer;
     position: relative;
 }
-.date-cell.selected {
+.day-cell.selected {
     background: #dfeadf;
     border-color: #4a904a;
     font-weight: bold;
+}
+.has-note {
+    background-color: #fff7d6;
+}
+.note-dot {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 20px;
+    color: #ff0000;
 }
